@@ -1,0 +1,61 @@
+{
+  "format": 1,
+  "restore": {
+    "/media/mdromi/New Volume/Learn Code/06.C#/CodeWithHarry C# Crush Course/app/app.csproj": {}
+  },
+  "projects": {
+    "/media/mdromi/New Volume/Learn Code/06.C#/CodeWithHarry C# Crush Course/app/app.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/media/mdromi/New Volume/Learn Code/06.C#/CodeWithHarry C# Crush Course/app/app.csproj",
+        "projectName": "app",
+        "projectPath": "/media/mdromi/New Volume/Learn Code/06.C#/CodeWithHarry C# Crush Course/app/app.csproj",
+        "packagesPath": "/home/mdromi/.nuget/packages/",
+        "outputPath": "/media/mdromi/New Volume/Learn Code/06.C#/CodeWithHarry C# Crush Course/app/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/mdromi/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.401/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

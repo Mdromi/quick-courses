@@ -1,0 +1,15 @@
+/media/mdromi/New Volume/Learn Code/06.C#/CodeWithHarry C# Crush Course/app/bin/Debug/net6.0/app
+/media/mdromi/New Volume/Learn Code/06.C#/CodeWithHarry C# Crush Course/app/bin/Debug/net6.0/app.deps.json
+/media/mdromi/New Volume/Learn Code/06.C#/CodeWithHarry C# Crush Course/app/bin/Debug/net6.0/app.runtimeconfig.json
+/media/mdromi/New Volume/Learn Code/06.C#/CodeWithHarry C# Crush Course/app/bin/Debug/net6.0/app.dll
+/media/mdromi/New Volume/Learn Code/06.C#/CodeWithHarry C# Crush Course/app/bin/Debug/net6.0/app.pdb
+/media/mdromi/New Volume/Learn Code/06.C#/CodeWithHarry C# Crush Course/app/obj/Debug/net6.0/app.csproj.AssemblyReference.cache
+/media/mdromi/New Volume/Learn Code/06.C#/CodeWithHarry C# Crush Course/app/obj/Debug/net6.0/app.GeneratedMSBuildEditorConfig.editorconfig
+/media/mdromi/New Volume/Learn Code/06.C#/CodeWithHarry C# Crush Course/app/obj/Debug/net6.0/app.AssemblyInfoInputs.cache
+/media/mdromi/New Volume/Learn Code/06.C#/CodeWithHarry C# Crush Course/app/obj/Debug/net6.0/app.AssemblyInfo.cs
+/media/mdromi/New Volume/Learn Code/06.C#/CodeWithHarry C# Crush Course/app/obj/Debug/net6.0/app.csproj.CoreCompileInputs.cache
+/media/mdromi/New Volume/Learn Code/06.C#/CodeWithHarry C# Crush Course/app/obj/Debug/net6.0/app.dll
+/media/mdromi/New Volume/Learn Code/06.C#/CodeWithHarry C# Crush Course/app/obj/Debug/net6.0/refint/app.dll
+/media/mdromi/New Volume/Learn Code/06.C#/CodeWithHarry C# Crush Course/app/obj/Debug/net6.0/app.pdb
+/media/mdromi/New Volume/Learn Code/06.C#/CodeWithHarry C# Crush Course/app/obj/Debug/net6.0/app.genruntimeconfig.cache
+/media/mdromi/New Volume/Learn Code/06.C#/CodeWithHarry C# Crush Course/app/obj/Debug/net6.0/ref/app.dll
