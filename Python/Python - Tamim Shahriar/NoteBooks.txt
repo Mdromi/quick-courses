@@ -1,0 +1,16 @@
+=================
+Before The Start
+=================
+1.Open File. [Learn Code > Python > Tamim Shahriar]
+2.Open Terminal [ ]
+3.Open Book.[Tamim Shahriar]
+===================
+Learning Speed : Start Date: 12/05/2022
+================== 
+
+//Day1 
+BOOK: Python  Programing[Part-1]
+Date: 12/05/2022
+
+
+
