@@ -78,15 +78,114 @@ PostgreSQL is a popular choice for organizations that need a powerful, flexible,
 
 ## psql cmd
 
-- Remove db `DROP DATABASE databasename;`
+- Remove DB
+  ```
+    DROP DATABASE databasename;
+  ```
+- All DB
+  ```
+  \l
+  ```
+- Change DB
+  ```
+  \c db-name
+  ```
 
 ## Table Cmd
 
-- Describe or view current table `\d | \d table-name`
-- Drop table `DROP TABLE table-name;`
-- Just show table `\dt`
+- Describe or view current table
+  ```
+  \d | \d table-name
+  ```
+- Drop table
+  `DROP TABLE table-name;`
+- Just show table
+
+  ```
+  \dt
+  ```
+
+- Table Row
+  ```
+  SELECT * FROM table-name;
+  ```
+- Insert table
+  ```
+  \i file-path/file.sql
+  ```
+- Show file path
+  ```
+  pwd
+  ```
+- Sort Table col
+  ```
+  SELECT * FROM table-name ORDER BY col-name ASC | DESC;
+  ```
+- Distinct(Unique value)
+  ```
+  SELECT DISTINCT col-name FROM table-name ORDER BY col-name;
+  ```
+- Where Clause and AND
+  ```
+  SELECT * FROM table-name WHERE col-name = 'value' AND (col-name = 'value' OR col-name = 'value');
+  ```
+- Comparison Operator
+  ```
+  >, <>, <, =, + etc...
+  ```
+- Limit, Offset & Fetch
+  ```
+  SELECT * FROM table-name LIMIT row-value;
+  SELECT * FROM table-name OFFSET row-value LIMIT row-value;
+  SELECT * FROM table-name OFFSET row-value FETCH FIRST row-value ROW ONLY;
+  ```
+- In
+  ```
+  SELECT * FROM table-name WHERE col-name IN('value');
+  ```
+- Between
+  ```
+  SELECT * FROM table-name WHERE col-name BETWEEN DATE '2022-11-25' AND '2023-03-06';
+  ```
+- Like and iLike
+  ```
+  SELECT * FROM table-name WHERE col-name LIKE '%.com';
+  SELECT * FROM table-name WHERE col-name LIKE '%@google.%';
+  SELECT * FROM table-name WHERE col-name LIKE '________@%';
+  SELECT * FROM table-name WHERE col-name ILIKE 'p%';
+  ```
+- Group By
+  ```
+  SELECT col-name, COUNT(*) FROM table-name GROUP BY col-name;
+  ```
+- Group By Having
+  ```
+  SELECT col-name, COUNT(*) FROM table-name GROUP BY col-name HAVING COUNT(*) > 5 ORDER BY col-name;
+  ```
+- Calculating Min, Max & Average
+  ```
+  SELECT MAX(col-name) FROM table-name;
+  SELECT MIN(col-name) FROM table-name;
+  SELECT make, model, MIN(price) FROM car GROUP BY make, model;
+  SELECT make, MIN(price) FROM car GROUP BY make;
+  ```
+- Sum
+  ```
+  SELECT SUM(col-name) FROM table-name;
+  SELECT col-name, SUM(col-name) FROM table-name GROUP BY col-name;
+  ```
+- Arithmetic Operators(ROUND)
+  ```
+  SELECT id, make, price, ROUND(price * .10, 2), ROUND(price - (price * .10), 2) FROM car;
+  ```
 
 ### How to create table with postgres
+
+- Table fake data generator
+
+  ```
+  https://www.mockaroo.com/
+  ```
 
 - Table structure
 
@@ -131,5 +230,5 @@ INSERT INTO person (
     date_of_birth,
     email
 )
-VALUES ('Md', 'Romi', 'MALE', DATE `2002-01-01, `mdromi@email.com`);
+VALUES ('Md', 'Romi', 'MALE',  date '2002-01-01', 'mdromi@email.com');
 ```
