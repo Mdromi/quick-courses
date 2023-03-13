@@ -178,6 +178,82 @@ PostgreSQL is a popular choice for organizations that need a powerful, flexible,
   ```
   SELECT id, make, price, ROUND(price * .10, 2), ROUND(price - (price * .10), 2) FROM car;
   ```
+- Alias
+  ```
+  SELECT id, make, price AS original_price, ROUND(price * .10, 2)AS ten_percent_value, ROUND(price - (price * .10), 2) AS discount_after_ten_percent FROM car;
+  ```
+- Coalesce
+  ```
+  SELECT COALESCE(1) AS number;
+  SELECT COALESCE(email, 'Email not provided') FROM person;
+  ```
+- NULLIF
+  ```
+  SELECT COALESCE(10 / NULLIF(0, 10), 0);
+  ```
+- Timestamps and dates
+  ```
+  SELECT NOW();
+  SELECT NOW()::DATE;
+  SELECT NOW()::TIME;
+  ```
+- Adding and Subtracting With Dates
+  ```
+  SELECT NOW() - INTERVAL '1 YEAR';
+  SELECT NOW() - INTERVAL '10 MONTHS';
+  SELECT (NOW() + INTERVAL '10 DAYS')::DATE;
+  ```
+- Extracting Fields
+  ```
+  SELECT EXTRACT(YEAR FROM NOW());
+  SELECT EXTRACT(MONTH FROM NOW());
+  SELECT EXTRACT(DAY FROM NOW());
+  SELECT EXTRACT(CENTURY FROM NOW());
+  ```
+- Age Function
+  ```
+  SELECT first_name, last_name, email, gender, date_of_birth, country_of_brith, AGE(NOW(), date_of_birth) AS age FROM person;
+  ```
+- Understanding Primary Key
+  ```
+  SELECT * FROM person LIMIT 1;
+  SELECT * FROM person WHERE id = 1;
+  ALTER TABLE person DROP CONSTRAINT person_pkey;
+  DELETE FROM person WHERE id = 1;
+  ```
+- Adding Primary Key
+  ```
+  insert into person (id, first_name, last_name, email, gender, date_of_birth, country_of_brith) values (1, 'Sofia', 'Parlor', 'sparlor0@cdbaby.com', 'Female', '2022-10-02', 'Vietnam');
+  ALTER TABLE person ADD PRIMARY KEY (id);
+  ```
+- Unique Constraints
+  ```
+  SELECT email, count(*) FROM person GROUP BY email;
+  SELECT email, count(*) FROM person GROUP BY email HAVING COUNT(*) > 1;
+  ALTER TABLE person ADD CONSTRAINT unique_email_address UNIQUE (email);
+  ```
+- Check Constraints
+  ```
+  SELECT UNIQUE gender FROM person;
+  SELECT DISTINCT gender FROM person;
+  ALTER TABLE person ADD CONSTRAINT gender_constraint CHECK (gender = 'Male' OR gender = 'Female' OR gender = 'Agender');
+  ```
+- Delete Records
+  ```
+  DELETE FROM person;
+  DELETE FROM person WHERE id = 1;
+  ```
+- Update Records
+  ```
+  UPDATE person SET email = 'romi@email.com' WHERE id = 1;
+  UPDATE person SET first_name = 'Md', last_name = 'Romi', gender = 'Male', email = 'romi@email.com' WHERE id = 1;
+  SELECT * FROM person WHERE id = 1;
+  ```
+- On Conflict Do Nothing
+  ```
+  INSERT INTO person (id, first_name, last_name, email, gender, date_of_birth, country_of_brith) values (1, 'Sofia', 'Parlor', 'sparlor0@cdbaby.com', 'Female', '2022-10-02', 'Vietnam')
+  ON CONFLICT(id) DO NOTHING;
+  ```
 
 ### How to create table with postgres
 
