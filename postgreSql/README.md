@@ -254,6 +254,65 @@ PostgreSQL is a popular choice for organizations that need a powerful, flexible,
   INSERT INTO person (id, first_name, last_name, email, gender, date_of_birth, country_of_brith) values (1, 'Sofia', 'Parlor', 'sparlor0@cdbaby.com', 'Female', '2022-10-02', 'Vietnam')
   ON CONFLICT(id) DO NOTHING;
   ```
+- Upset
+  ```
+  INSERT INTO person (id, first_name, last_name, email, gender, date_of_birth, country_of_brith) values (1, 'MD', 'Romi', 'romi@email.com.bd', 'Male', '2002-10-02', 'Bangladesh')
+  ON CONFLICT(id) DO UPDATE SET first_name = EXCLUDED.first_name, last_name = EXCLUDED.last_name, email = EXCLUDED.email, gender = EXCLUDED.gender, date_of_birth = EXCLUDED.date_of_birth, country_of_brith = EXCLUDED.country_of_brith;
+  ```
+- Updating Foreign Keys Columns
+  ```
+  SELECT * FROM person;
+  UPDATE person SET  car_id = 2 WHERE id = 1;
+  ```
+- Inner Joins
+  ```
+  SELECT * FROM person;
+  SELECT * FROM person JOIN car ON person.car_id = car.id;
+  \x
+  SELECT person.first_name, car.make, car.model, car.price FROM person JOIN car ON person.car_id = car.id;
+  ```
+- Left Joins
+  ```
+  SELECT * FROM person;
+  SELECT * FROM person LEFT JOIN car ON person.car_id = car.id;
+  SELECT * FROM person LEFT JOIN car ON person.car_id = car.id WHERE car.* IS NULL;
+  SELECT * FROM person WHERE car_id IS NULL;
+  ```
+- Deleting Records With Foreign
+  ```
+  SELECT * FROM person;
+  chmod 777 /home/mdromi/Downloads/
+  \copy (SELECT * FROM person LEFT JOIN car ON person.car_id = car.id) TO '/home/mdromi/Downloads/result.csv' DELIMITER ',' CSV HEADER;
+  ```
+- Serial & Sequences
+  ```
+  SELECT * FROM person;
+  SELECT * FROM person_id_seq;
+  SELECT nextval('person_id_seq'::regclass);
+  ALTER SEQUENCE person_id_seq RESTART WITH 10;
+  ```
+- Extensions
+  ```
+  SELECT * FROM pg_a;
+  SELECT * FROM pg_available_extensions;
+  ```
+- Understanding UUID Data Type
+  ```
+  CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+  \?
+  \df
+  SELECT uuid_generate_v4();
+  \df[anptw][S+] [PATRN] list [only agg/normal/procedures/trigger/window] functions
+  ```
+- UUID As Primary Key
+  ```
+  UPDATE person SET car_uid = '70ebfc18-375f-45b2-8864-d0668398b404' WHERE person_uid = '4e4cad36-5b40-4f91-a76a-4b79f7ce8f58';
+  UPDATE person SET car_uid = 'c254a8f7-6e7e-408e-b6f5-9328eb674b55' WHERE person_uid = '55d197f7-0508-4822-a53d-4188bf402c3e';
+  SELECT * FROM person JOIN car ON person.car_uid = car.car_uid;
+  SELECT * FROM person JOIN car USING(car_uid);
+  SELECT * FROM person LEFT JOIN car USING(car_uid);
+  SELECT * FROM person LEFT JOIN car USING(car_uid) WHERE car.* IS NULL;
+  ```
 
 ### How to create table with postgres
 
