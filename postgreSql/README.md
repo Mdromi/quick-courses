@@ -54,6 +54,28 @@ PostgreSQL is a popular choice for organizations that need a powerful, flexible,
 
   `GRANT ALL PRIVILEGES ON DATABASE dbname TO username;`
 
+- Set new password:
+
+  `sudo passwd postgres`
+  
+- Switch user:
+
+  `sudo -i -u postgres`
+  
+ - Provide User Permision:
+
+  ```
+  ALTER USER user_name WITH SUPERUSER;
+  ALTER USER user_name CREATEDB;
+  ALTER USER user_name CREATEROLE;
+  ALTER USER user_name REPLICATION;
+  ALTER USER user_name BYPASSRLS;
+  ```
+
+- Show all users:
+
+  `sudo -u postgres psql -c "\du"` 
+
 - Exit the PostgreSQL command-line interface by running the following command:
 
   `\q`

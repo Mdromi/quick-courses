@@ -1,0 +1,44 @@
+# get people
+GET http://localhost:8080/people
+
+###
+# get people
+GET http://localhost:8080/person/1
+
+###
+# create person
+POST http://localhost:8080/create/person
+
+content-type: application/json
+{
+    "Name": "sample",
+    "Email": "sample4@gmail.com"
+}
+
+###
+# create person
+DELETE  http://localhost:8080/delete/person/11
+
+###
+# get all books
+GET http://localhost:8080/books
+
+###
+# get single book
+GET http://localhost:8080/books/1
+
+###
+# create books
+POST http://localhost:8080/create/book
+
+content-type: application/json
+{
+  "Title": "Sample Book",
+  "Author": "John Doe",
+  "CallNumber": 2119092937,
+  "PersonID": 1
+}
+
+###
+# delete book
+DELETE  http://localhost:8080/delete/book/17
