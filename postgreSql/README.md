@@ -61,6 +61,11 @@ PostgreSQL is a popular choice for organizations that need a powerful, flexible,
 - Switch user:
 
   `sudo -i -u postgres`
+
+- Show Database All Table:
+  ```
+    psql -h your_host -d your_database -U your_user -c "SELECT table_name FROM information_schema.tables WHERE table_schema = 'public';"
+  ```
   
  - Provide User Permision:
 
