@@ -16,6 +16,24 @@ class Queue
   end
 end
 
+class Queue2
+  def initialize
+    @elements = []
+  end
+  def enqueue(element)
+    @elements.push(element)
+  end
+  def dequeue
+    @elements.shift
+  end
+  def peek
+    @elements.first
+  end
+  def empty?
+    @elements.empty?
+  end
+end
+
 # Using the queue
 queue = Queue.new
 queue.enqueue(1)
